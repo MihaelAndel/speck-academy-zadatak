@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
+* {
+	user-select: none;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 18px;
+	box-sizing: border-box;
+	padding: 50px;
+	height: 100vh;
+	width: 100vw;
+}
+
+h2 {
+	font-size: 250%;
+}
+
+hr {
+	position: relative;
+	width: 0%;
+	left: 2%;
+	margin-bottom: 10px;
+	border: 0;
+	border-top: 2px solid rgba(95, 172, 160, 0.7);
+	transition: width 0.35s ease;
+}
+
+ul {
+	list-style-type: none;
+}
+
+main {
+	display: flex;
+	width: 80vw;
+	height: 90vh;
+	margin: auto;
+}
+
+.list-wrapper {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	margin: 0 15px;
+	filter: blur(0.65px);
+	transition: filter 0.25s;
+}
+
+.list-wrapper:hover {
+	filter: none;
+}
+
+.list-wrapper:hover .list-title {
+	transform: translate(5%, 0);
+	opacity: 1;
+}
+
+.list-wrapper:hover hr {
+	width: 96%;
+}
+
+.list-wrapper:hover .list {
+	border-color: rgba(55, 55, 55, 0.8);
+}
+
+.list-title {
+	color: rgb(25, 25, 25);
+	opacity: 0.65;
+	padding: 0 15px;
+	transition: transform 0.5s, opacity 0.35s;
+}
+
+.list {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	border: 3px solid rgba(100, 100, 100, 0.15);
+	border-radius: 2px;
+	transition: border-color 0.25s;
+}
+
+.selected-tools {
+	display: block;
+	overflow-y: scroll;
+}
+
+li.list-element {
+	font-size: 130%;
+	line-height: 75px;
+	min-width: 35%;
+	min-height: 10%;
+	margin: auto;
+	text-align: center;
+	cursor: pointer;
+	transition: background-color 0.25s ease, box-shadow 0.25s ease,
+		transform 0.25s ease, display 0.5s ease;
+	border-radius: 7px;
+	border: 2px solid rgba(95, 172, 160, 0.7);
+	background-color: rgba(95, 172, 160, 0.3);
+}
+
+li.list-element:hover {
+	background-color: #4747bf;
+	transform: scale3d(1.05, 1.05, 1.05);
+}
+
+li.selected-tool {
+	max-width: 35%;
+	margin: 25px auto;
+}
+
+li.selected-tool:hover {
+	background-color: #ff6666;
+}
+
+@media only screen and (max-width: 768px) {
+	body {
+		font-size: 16px;
+	}
+
+	li.list-element {
+		line-height: 75px;
+		min-width: 40%;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	body {
+		font-size: 14px;
+	}
+
+	li.list-element {
+		line-height: 50px;
+		min-width: 50%;
+		margin: 10px auto;
+	}
+
+	main {
+		flex-direction: column;
+		overflow-y: scroll;
+	}
+}
